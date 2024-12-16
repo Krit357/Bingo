@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.main-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  border: 3px solid black;
+  font-size: 72px;
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: red;
+}
+
+.board {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.board-block {
+  padding: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #000;
+}
+
+.clicked {
+  background-color: red;
+  color: white;
+}
+
+.free-block {
+  background-color: red;
+  font-size: 24px;
+  color: white; /* Optional: Make text readable on red background */
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact; /* Ensures colors are printed */
+    print-color-adjust: exact; /* Standard property */
+  }
+
+  h1,
+  .free-block {
+    background-color: red !important; /* Make sure the background appears */
+    color: white !important; /* Ensure text is readable */
+  }
+
+  * {
+    box-shadow: none !important; /* Remove box shadows for clean print */
+    border-color: black !important; /* Ensure visible borders */
+  }
+}
